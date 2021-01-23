@@ -8,7 +8,7 @@ Repository with solutions to educational problems and educational projects from 
 
 ### Python Developer
 
-| Project title | Level | Сompleted |
+| Project title | Level | Completed |
 | --- | --- | --- |
 | Zookeeper | Easy | Yes |
 | Simple Banking System | Medium | Yes |
