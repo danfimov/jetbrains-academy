@@ -12,3 +12,4 @@ Repository with solutions to educational problems and educational projects from 
 | --- | --- | --- |
 | Zookeeper | Easy | Yes |
 | Simple Banking System | Medium | Yes |
+| Text-Based Browser | Hard | No |
