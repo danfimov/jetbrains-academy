@@ -154,6 +154,15 @@ files:
 
     TextBasedBrowserTest('browser.browser').run_tests()
   learner_created: false
+- name: browser/bloomberg_com
+  visible: true
+  learner_created: true
+- name: browser/bloomberg
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/79/stages/437/implement#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Wed, 27 Jan 2021 03:29:23 UTC
+record: 2
