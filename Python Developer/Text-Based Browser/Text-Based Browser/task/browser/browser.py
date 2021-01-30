@@ -1,5 +1,7 @@
-import os
 import argparse
+import os
+
+import requests
 
 nytimes_com = '''
 This New Liquid Is Magnetic, and Mesmerizing
@@ -36,11 +38,12 @@ Twitter and Square Chief Executive Officer Jack Dorsey
  Tuesday, a signal of the strong ties between the Silicon Valley giants.
 '''
 
-VALIDATED_URLS = ['nytimes.com', 'bloomberg.com']
+
+# VALIDATED_URLS = ['nytimes.com', 'bloomberg.com']
 
 
 def valid_url(check_url: str):
-    if "." in check_url and check_url in VALIDATED_URLS:
+    if "." in check_url:
         return True
     else:
         return False
@@ -59,11 +62,26 @@ directory = parser.parse_args().dir
 if not os.access(directory, os.F_OK):
     os.mkdir(directory)
 
+previous_page = ''
+stack_pages = []
 while (user_input := input()) != 'exit':
-    if valid_url(user_input):
-        content = locals().get(user_input.replace(".", "_"))
+    if user_input == 'back':
+        if stack_pages:
+            print(stack_pages.pop())
+    elif valid_url(user_input):
+        if user_input[:8] != 'https://':
+            user_input = 'https://' + user_input
+        r = requests.get(user_input)
+        content = r.text
         print(content)
+
+        if previous_page:
+            stack_pages.append(previous_page)
+        previous_page = content
+
+        user_input = user_input[8:]
         name = user_input.rpartition(".")[0]
         save_content(content, directory, name)
+
     else:
         print("Error: Incorrect command or URL")
