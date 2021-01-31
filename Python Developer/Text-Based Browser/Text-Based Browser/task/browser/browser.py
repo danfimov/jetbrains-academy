@@ -2,6 +2,8 @@ import argparse
 import os
 
 import requests
+from bs4 import BeautifulSoup
+from colorama import Fore, init
 
 nytimes_com = '''
 This New Liquid Is Magnetic, and Mesmerizing
@@ -55,6 +57,8 @@ def save_content(file_content: str, file_directory: str, file_name: str):
         file.write(file_content)
 
 
+init()
+
 parser = argparse.ArgumentParser('This is a simple web-browser')
 parser.add_argument('dir', default='')
 
@@ -72,7 +76,17 @@ while (user_input := input()) != 'exit':
         if user_input[:8] != 'https://':
             user_input = 'https://' + user_input
         r = requests.get(user_input)
-        content = r.text
+        soup = BeautifulSoup(r.content, 'html.parser')
+
+        page_lines = []
+        for child in soup.recursiveChildGenerator():
+            if child.name and len(child.contents) == 1:
+                text = child.text
+                if child.name == 'a':
+                    text = Fore.BLUE + text + Fore.RESET
+                page_lines.append(text)
+        content = '\n'.join(page_lines)
+
         print(content)
 
         if previous_page:
