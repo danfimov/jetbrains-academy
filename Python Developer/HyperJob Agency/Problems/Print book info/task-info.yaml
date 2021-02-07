@@ -8,21 +8,8 @@ files:
         pass
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/8085#comment
-status: Failed
+status: Solved
 feedback:
-  message: |
-    Failed test #2 of 7. Wrong answer
-
-    This is a sample test from the problem statement!
-
-    Test input:
-    title: Crime and Punishment
-    author: None
-    year: 1866
-    Correct output:
-    "Crime and Punishment" was written in 1866
-
-    Your code output:
-    "Crime and Punishment"
-  time: Fri, 05 Feb 2021 07:04:46 UTC
+  message: <html>Correct solution</html>
+  time: Fri, 05 Feb 2021 07:05:52 UTC
 record: -1
