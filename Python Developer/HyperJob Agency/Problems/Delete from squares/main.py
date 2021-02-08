@@ -4,6 +4,6 @@ user_input = int(input())
 try:
     print(squares[user_input])
     del squares[user_input]
-except Exception:
+except KeyError:
     print('There is no such key')
 print(squares)
