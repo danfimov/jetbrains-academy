@@ -1,0 +1,14 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    def get_percentage():
+        pass
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9516#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 10 Feb 2021 06:22:36 UTC
+record: -1
