@@ -1,0 +1,66 @@
+
+.quiz-area{
+    background-image: url("https://stepik.org/media/attachments/lesson/374893/world.png");
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: center;
+}
+.title {
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+    position: relative;
+    color: cadetblue;
+    font-family: 'Roboto', sans-serif;
+}
+.flex-container {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-template-rows:  90px 90px 90px; /* 3 строки */
+    grid-template-columns: 90px 90px 90px; /* 3 столбца */
+    background-color: rgba(255, 255, 255, 0);
+    grid-gap: 10px 10px;
+    justify-items: stretch;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0)
+
+}
+.card {
+    height: 90px;
+    width: 90px;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+.front, .back {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 10px;
+    position: absolute;
+}
+.front{
+    background: sandybrown;
+    color: orangered;
+    z-index: 2;
+    backface-visibility: hidden;
+}
+.back{
+    background: orangered;
+    color: sandybrown;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+.container:hover .card{
+    transform: rotateY(180deg);
+}
+.container{
+    perspective: 1000px;
+}

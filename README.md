@@ -16,3 +16,8 @@ Repository with solutions to educational problems and educational projects from 
 | Text-Based Browser | Hard | Yes |
 | HyperJob Agency | Challenging | No |
 
+### Frontend Developer
+
+| Project title | Level | Completed |
+| --- | --- | --- |
+| Flashcards | Easy | Yes |
