@@ -21,3 +21,4 @@ Repository with solutions to educational problems and educational projects from 
 | Project title | Level | Completed |
 | --- | --- | --- |
 | Flashcards | Easy | Yes |
+| To-Do List | Easy | Yes |
