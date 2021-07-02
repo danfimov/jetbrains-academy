@@ -1,0 +1,144 @@
+type: edu
+files:
+- name: src/index.html
+  visible: true
+  text: |-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello, World!</title>
+    </head>
+    <body>
+
+    </body>
+    </html>
+  learner_created: false
+- name: test/test.js
+  visible: false
+  text: |
+    const puppeteer = require('puppeteer');
+    const path = require('path');
+    // '..' since we're in the hstest/ subdirectory; learner is supposed to have src/index.html
+    const pagePath = 'file://' + path.resolve(__dirname, '../src/index.html');
+
+    const hs = require('hs-test-web');
+
+    const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+
+    async function stageTest() {
+        const browser = await puppeteer.launch({
+            headless: false,
+            defaultViewport: null,
+            args:['--start-maximized']
+        });
+
+        const page = await browser.newPage();
+        await page.goto(pagePath);
+
+        page.on('console', msg => console.log(msg.text()));
+
+        await sleep(1000);
+
+        let result = await hs.testPage(page,
+            // Test #1 - check if the document has a <h1> element
+            () => {
+                let headings1 = document.getElementsByTagName('h1');
+
+                if (headings1 === null || headings1.length === 0) {
+                    return hs.wrong('Can\'t find the h1 element. Check that you created it.');
+                }
+
+                let header = headings1[0]
+                let title = header.textContent || header.innerText;
+
+                if (!title || title.length === 0) {
+                    return hs.wrong('Can\'t find the text inside the h1 element.');
+                }
+
+                return hs.correct();
+            },
+            // Test #2 - check if the document has two <h2> elements
+            () => {
+                let headings2 = document.getElementsByTagName('h2');
+
+                if (headings2 === null || headings2.length < 2) {
+                    return hs.wrong(`Can't find two h2 elements. Your web page should have at least two h2 elements at this stage. There are only ${headings2.length}.`);
+                }
+
+                let found_about_me = false;
+                let found_portfolio = false;
+
+                for (let header of headings2) {
+                    let title = (header.textContent || header.innerText).trim();
+
+                    if (title && title.toLowerCase() === 'portfolio') {
+                        found_portfolio = true;
+                    }
+
+                    if (title && title.toLowerCase() === 'about me') {
+                        found_about_me = true;
+                    }
+                }
+
+                if (!found_about_me) {
+                    return hs.wrong('Can\'t find "About me" text in one of the h2 elements.');
+                }
+
+                if (!found_portfolio) {
+                    return hs.wrong('Can\'t find "Portfolio" text in one of the h2 elements.');
+                }
+
+                return hs.correct();
+            },
+            // Test #3 - check if the document has at least two <img> elements
+            () => {
+                let images = document.getElementsByTagName('img');
+
+                if (images === null || images.length < 2) {
+                    return hs.wrong('Cannot find at least two img elements on your web page. Add one image that will represent you and at least one that will represent your work.');
+                }
+
+                return hs.correct();
+            },
+            // Test #4 - check if the document has at least one <p> tag
+            () => {
+                let paragraphs = document.getElementsByTagName('p');
+
+                if (paragraphs === null || paragraphs.length < 1) {
+                    return hs.wrong('Cannot find at least one <p> element on your web page.');
+                }
+
+                return hs.correct();
+            }
+        );
+
+        await browser.close();
+        return result;
+    }
+
+
+    jest.setTimeout(30000);
+    test("Test stage", async () => {
+            let result = await stageTest();
+            if (result['type'] === 'wrong') {
+                fail(result['message']);
+            }
+        }
+    );
+  learner_created: false
+- name: src/pictures/me.jpg
+  visible: true
+  learner_created: true
+- name: src/pictures/site_1.png
+  visible: true
+  learner_created: true
+- name: src/pictures/site_2.png
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/projects/137/stages/730/implement#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Thu, 01 Jul 2021 00:57:18 UTC
+record: 3

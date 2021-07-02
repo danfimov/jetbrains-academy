@@ -2,7 +2,7 @@
 
 ## About 
 
-Repository with solutions to educational problems and educational projects from the JetBrains Academy website
+Repository with solutions to educational problems and educational projects from the JetBrains Academy website. Check my profile [here](https://hyperskill.org/profile/105576442).
 
 ## Tracks
 
@@ -16,9 +16,10 @@ Repository with solutions to educational problems and educational projects from 
 | Text-Based Browser | Hard | Yes |
 | HyperJob Agency | Challenging | No |
 
-### Frontend Developer
+### Frontend Developer (completed)
 
 | Project title | Level | Completed |
 | --- | --- | --- |
 | Flashcards | Easy | Yes |
 | To-Do List | Easy | Yes |
+| Portfolio | Challenging | Yes |
