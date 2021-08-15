@@ -13,6 +13,7 @@ Repository with solutions to educational problems and educational projects from 
 | Zookeeper | Easy | Yes |
 | Simple Chatty Bot | Easy | Yes |
 | Simple Tic-Tac-Toe | Easy | Yes |
+| Hangman | Easy | Yes |
 | Simple Banking System | Medium | Yes |
 | Text-Based Browser | Hard | Yes |
 | HyperJob Agency | Challenging | No |
