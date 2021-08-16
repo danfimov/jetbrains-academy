@@ -7,10 +7,3 @@ Having the option to read online documentation or find something on the Internet
 ## Learning outcomes
 
 In this project, you will learn how HTTP works and how to work with it in Python. You will become familiar with Python input and output. You will also need to parse HTML, so you'll get some experience with that, too.
-
-## Files
-
-| Name | Purpose |
-| ---- | ------- |
-| /Problems | Lesson tasks |
-| /Text-Based Browser | General project |

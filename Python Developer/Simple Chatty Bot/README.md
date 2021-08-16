@@ -7,10 +7,3 @@ Here, at the beginning of your programmer’s path, creating a simple console ch
 ## Learning outcomes
 
 You’ll get to know the basic syntax of Python and write a simple program using variables, conditions, loops, and functions.
-
-## Files
-
-| Name | Purpose |
-| ---- | ------- |
-| /Problems | Lesson tasks |
-| /Simple Chatty Bot | General project |

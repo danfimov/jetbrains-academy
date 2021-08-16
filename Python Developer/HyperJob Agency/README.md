@@ -7,10 +7,3 @@ Web services are really useful for sharing information almost instantly. You pub
 ## Learning outcomes
 
 You will learn how to create a dynamic website with Django. After completing the project, you will be able to create another client/server application all by yourself.
-
-## Files
-
-| Name | Purpose |
-| ---- | ------- |
-| /Problems | Lesson tasks |
-| /HyperJob Agency | General project |

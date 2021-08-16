@@ -7,10 +7,3 @@ This short code challenge can help the local zoo look after its denizens. You wi
 ## Learning outcomes
 
 This project is aimed at our beginners. It helps you understand some syntax basics and learn how to work with variables, data storage types such as lists, and while loops.
-
-## Files
-
-| Name | Purpose |
-| ---- | ------- |
-| /Problems | Lesson tasks |
-| /Zookeeper | General project |
