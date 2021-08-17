@@ -16,6 +16,7 @@ Repository with solutions to educational problems and educational projects from 
 | Hangman | Easy | Yes |
 | Loan Calculator | Easy | Yes |
 | Simple Banking System | Medium | Yes |
+| Markdown Editor | Medium | No |
 | Text-Based Browser | Hard | Yes |
 | HyperJob Agency | Challenging | No |
 
