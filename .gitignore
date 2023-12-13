@@ -131,3 +131,4 @@ dmypy.json
 # Apple Finder 
 .DS_Store
 
+.idea/
